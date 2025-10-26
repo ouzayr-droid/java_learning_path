@@ -1,3 +1,5 @@
+// Notions de récursivité - structure en couche
+
 import java.util.ArrayList;
 
 class Categories extends ArrayList<Category> 

@@ -140,3 +140,33 @@ class PrivateClass {
 - quand instancie une classe, la variable qui acceuil cette instance ne contient rien d'autre que l'adresse de l'emplacemet mémoire où est stocker cette instance
 - donc quand on donne cette instance comme arguments à une fonction, on ne donne rien d'autre que l'adrese de cette élément
 - et toute modification dan la fonction qui portera sur cette adresse affectera directement le contenu à l'emplacement mémoire
+
+26/10/25
+Erreurs
+- Erreurs lors de la compilation
+    -> durant cette étape on peut rencontrer deux types d'erreurs: syntaxique et sémantique
+        les IDE intélligents peuvent détecter facilement ce type d'erreur et les soulisgnés en rouge directement lors de l'écriture du code
+
+- Erreurs lors de l'exécution
+    ce type d'erreur on le rencontre typiquement durant l'exécution de notre programme et est lié à la logique de notre programme
+    erreur de logique != erreur de logique métier
+    l'erreur de logique peut arriver par exemple quand on éssaye d'accéder à l'index d'une liste qui n'existe pas (la taille de la liste fait défaut)
+    l'erreur de logique métier peut être une inversion de fonctionnalité, confondre par exemple durant l'implémentation des notions de débit et crédit
+
+    l'erreur de logique fera planter notre programme tant disque l'erreur de logique métier fera fonctionner l'appli mais le résultat qu'on aura ne sera pas la même chose que ce qu'on a demandé
+
+    try {} catch(ExceptionName e){} => pour gérer les exceptions
+    Dans catch, on peut avoir:
+        ArithmeticException
+        NumberFormatException
+        ArrayIndexOutOfBoundsException
+        NullPointerException
+        IOException
+        ClassNotFoundException
+
+Manipuler les fichiers
+
+- Fonction Lambda (notion de closure)
+    une référence vers méthode/fonction
+
+    -> Notions d'inter faces fonctionnelles
