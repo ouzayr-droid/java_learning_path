@@ -1,0 +1,142 @@
+les types:
+    int, permet de stocker un entier avec une taille donnée
+    long, permet de stocker un entier toujours mais avec une taille plus grande
+
+    float, permet de stocker un nombre décimal, ne stocke que des décimaux à 2 chiffres après la virgule
+    double, permet de stocker un nombre décimal, avec une espace mémoire plus grande, deux fois plus précis que float, et donc plus de chiffres après la virgule
+    N.B: Pour une précision jusqu'à deux chiffres après la virgule, il faut utiliser float. Au delà, il faut utiliser double
+
+il faut faire attention quand on perfome des opérations en java (à faire attention à la conversion de cast):
+    e.g: Le calcul d'une division de 5 par 2 donnerait normalement 2.5. Mais en java cela dépend du type des varibles qui stockent 5 et 2
+        ansi si a,b stocke respectivement 5 et 2, et que a et b sont des int alors le résultat de la division ne peut être que int (2) la partie décimal perdu
+        Pour y remédier il faudra déclarer a ou b comme étant float ou faire une conversion de cast de la sorte (float)a/b
+
+On peut mettre des Strings bout à bout, mélangé à des nombres si on le souhaite. Cela s'appelle la concaténation
+
+06-10-2025
+- les principes du code propre exige qu'aucune logique ne soit écrite à l'intérieur de la méthode main
+- les programmes java sont structurés en packages et classes
+- toutes les fonctions sont des méthodes (une fonction dans un programme est une fonction quand elle est à l'extérieur d'une classe)
+- les packages sont mappés dans des dossiers et les classes dans des fichiers
+- javac pour convertit le code java en bytecode et java pour l'interpreter
+- classes modèles et classes utilitaires (utilisatares comme String)
+- Accompagner nos classes et méthodes avec des commentaires de documentation
+        /**
+            *@author vidarr
+            *what the unction did ?
+            *what it return ?
+        */
+
+11/10/2025
+- Les CLASSES DE MODELES (e.g: String) et les CLASSES UTILITAIRES
+- Un module est un ensemble de fichier source associer à un nom, comme un framework.
+- Un package regroupe des classes liées entre elles
+- implémentation du contrôle d'accès
+        -> public: visible pour tous et par conséquent le moins restrictif
+        -> protected: visible pour le package et l'ensemble de ses sous-classes
+        -> package-protected: visible uniquement par le package dans lequel il se trouve (paramètre par défaut quand on ne précise rien)
+        -> accessible uniquement à l'interieur de la classe dans lequel il est situé.
+
+class PrivateClass {
+
+    int internalProperty = 0; // assigne automatiquement package-private par défaut
+
+    protected defaultProperty = true; // assigne automatiquement package-private
+
+    public boolean publicProperty = true; // convertit automatiquement en package-private
+
+    private String fileprivateProperty = "Hello!"; //disponible seulement pour la classe
+
+    private static void privateMethod() {
+
+    }
+}
+
+- Portée d'une variable
+
+- Les boucles
+    -> for... utiliser pour un nombre connue d'itération
+        for(état_initial, conditions, itérations)
+        {...instructions}
+
+    -> while... utiliser pour un nombre d'itérations inconnue à l'avance, on indique alors juste la condition d'arrêt
+        while(condition)
+        {...instructions}
+
+    -> do...while, quelques soit la condition, le bloc de code dans la partie do... est exécuté au moins une fois
+        do{...instructions}while(conditions)
+
+    -> continue && break
+
+- la signature d'une fonction
+
+- equals => méthode de la classe String
+
+- == ne permet pas de vérifier si deux valeurs sont égaux, mais plutôt vérifie s'ils pointent vers la même adresse en mémoire. Vérifie si deux objets ne font qu’un (la même adresse en mémoire), et non s’ils ont le même contenu.
+
+- if(conditions 0){}...else if(conditions 1){}...else{}
+
+- switch(conditions)
+    {
+        case...:
+            instructions;
+        default:
+            instructions;
+
+    }
+
+- une variable déclaré avec final ne peut pas changer de varible après sa déclaration
+
+25/10/25
+- polymorphisme = redéfinition d'une méthode de la classe dans la classe fille (changement de comportement)
+
+- utilisation de l'annotation @Override (sur la ligne juste au dessus de la méthode/l'attribut/classe redéfinit)
+
+- les interfaces, il déinit les signatures des méthodes que devront implémenter toutes les classes l'implémentant
+    public interface NomInterface<E> {}
+
+
+- tableau => nombre de valeur fixe
+    String [] monTableau = new String[NbreElementDuTbleau]
+    String [] monTableau = new String[NbreElementDuTbleau]{initialisation_ici}
+
+- Listes, permettent d'implémenter des tableaux à taille variable
+    List<String> nomList = new ArrayList<String>()
+        <Integer>
+        <Boolean>
+        <Float>
+    On ne peut utiliser les types primitifs pour la même raison qu'il s'agit là de types primitifs
+
+    On ne peut initialiser une List directement lors de la déclaration, il faut attendre la ligne d'après déclaration pour l'initaliser, et les valeurs sont remplies une par une
+        monTableau.add("hello");
+        monTableau.add("world");
+
+        monTableau.set(0,4); // on remplace l'élement à l'index 0 par 4
+
+        monTableau.remove(1); // on retire l'élément à l'index 1
+
+        monTableau.size(); // renvoie le nombre d'élements de monTableau
+
+- Set, une autre forme de List qu'on peut utiliser si on ne se soucie pas de l'ordre des éléments qu'on voudra plus tard ajouter à la liste
+    Set<Integer> nomSet = new HashSet<Integer>();
+
+    nomSet.add("elementWeWantToAdd");
+    nomSet.add("an other element");
+    nomSet.remove("elementValue");
+    nomSet.size(); // number of elements in the Set
+
+- Map, c'es un dictionnaire qui fonctionne sous le principe clé:valeur
+    Map<String, Integer> nomMap = new HashMap<String, Integer>();
+
+    nomMap.put("keyString", "valueInteger");
+    nomMap.get("key"); // return the value which have key as key
+    nomMap.remove("key");
+    nomMap.size();
+
+- fonction => paramètre(s)
+- appel de fonction => argument(s)
+
+- passage de paramètre par copie et passage de paramètre par référence
+- quand instancie une classe, la variable qui acceuil cette instance ne contient rien d'autre que l'adresse de l'emplacemet mémoire où est stocker cette instance
+- donc quand on donne cette instance comme arguments à une fonction, on ne donne rien d'autre que l'adrese de cette élément
+- et toute modification dan la fonction qui portera sur cette adresse affectera directement le contenu à l'emplacement mémoire
