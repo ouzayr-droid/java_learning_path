@@ -85,14 +85,14 @@ class PrivateClass {
 
     }
 
-- une variable déclaré avec final ne peut pas changer de varible après sa déclaration
+- une variable déclaré avec final ne peut pas changer de valeur après sa déclaration
 
 25/10/25
-- polymorphisme = redéfinition d'une méthode de la classe dans la classe fille (changement de comportement)
+- polymorphisme = redéfinition d'une méthode de la classe parente dans la classe fille (changement de comportement)
 
 - utilisation de l'annotation @Override (sur la ligne juste au dessus de la méthode/l'attribut/classe redéfinit)
 
-- les interfaces, il déinit les signatures des méthodes que devront implémenter toutes les classes l'implémentant
+- les interfaces, ils définissent les signatures des méthodes que devront implémenter toutes les classes l'implémentant
     public interface NomInterface<E> {}
 
 
