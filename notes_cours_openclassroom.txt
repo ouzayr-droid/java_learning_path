@@ -170,3 +170,37 @@ Manipuler les fichiers
     une référence vers méthode/fonction
 
     -> Notions d'inter faces fonctionnelles
+
+
+- Les types en Java et ordre de conversion implicite
+    (entier)
+    bytes  =>  1 octet
+    short  =>  2 octet
+    int    =>  4 octet
+    long   =>  8 octet
+
+    (les flottants)
+    float  => 4 octets
+    double => 8 octets
+
+    (caractère)
+    char   => 2 octets
+
+    (Booléen)
+    boulean => dépend de JVM
+
+    Ordre (va d'un plus petit vers un plus grand)
+    byte -> short -> int -> long -> float -> double
+    En cas de conversion implicite, le plus petit est convertit vers le type du plus grand
+
+    Règle spéciale et obligatoire en java. 
+    En java, tout calcul arithmétique sur byte, short et char promeut automatiquement les opérandes en int
+
+- Notions de court-circuit
+    Il existe une différence entre &&, &, et AND
+    -> le premier fait un ET logique avec court-circuit, ça veut que dire quand il rencontre un false en premier, il ne lit plus la deuxième partie
+    -> le second fait un ET logique bit à bit sans court-circuit
+            int x = 6 & 3
+            int x = 110 & 011
+                x = 010 = 2
+    -> AND bolean mais sans court-circuit (les deux parties sont toujours exécutés)

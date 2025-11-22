@@ -8,6 +8,21 @@ public class typing {
 
     // L'exercice consiste à trouver le type de chaque opération
     // b1 + b2 = byte
-    // p + b1 = short + byte
+    // p + b1 = short->int + byte->int = int
+    // b1*b2 = int
+    // q + p*(b1+b2) = long
+    // x + q * n = float
+    // b1*q/x = float
+    // b1*q*2./x = float
+    // b1*q*2.f/x = 
 
+
+    // Type char
+    char c = 60, ce = 'e', cg = 'g';
+    byte b = 10;
+
+    // c+1 = 61 (int);
+    // 2*c = 120 (int);
+    // cg-ce = 2 (int)
+    // b*c = 600 (int)
 }
