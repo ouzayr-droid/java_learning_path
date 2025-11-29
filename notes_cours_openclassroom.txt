@@ -206,3 +206,19 @@ Manipuler les fichiers
             int x = 110 & 011
                 x = 010 = 2
     -> AND bolean mais sans court-circuit (les deux parties sont toujours exécutés)
+
+- java fait toujours un passage de paramètre par valeur, derrière ce qu'on renvoie c'est toujours une adresse mais une copie de l'adresse
+
+- déclaration d'un tableau
+    int t1[] = {1, 2, 3};
+    il est interdit de faire la déclaration et l'initaltion sur deux lignes distinct
+        e.g: 
+            int t2[];
+            t2 = {1, 2, 3}
+
+- Lire au clavier
+    import java.util.Scanner
+
+    Scanner input new Scanner(System.in);
+    String name = input.nextLine()
+    String name = input.nextInt()
