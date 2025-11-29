@@ -6,6 +6,8 @@ les types:
     double, permet de stocker un nombre décimal, avec une espace mémoire plus grande, deux fois plus précis que float, et donc plus de chiffres après la virgule
     N.B: Pour une précision jusqu'à deux chiffres après la virgule, il faut utiliser float. Au delà, il faut utiliser double
 
+    byte -> short -> int -> long -> float -> double
+
 il faut faire attention quand on perfome des opérations en java (à faire attention à la conversion de cast):
     e.g: Le calcul d'une division de 5 par 2 donnerait normalement 2.5. Mais en java cela dépend du type des varibles qui stockent 5 et 2
         ansi si a,b stocke respectivement 5 et 2, et que a et b sont des int alors le résultat de la division ne peut être que int (2) la partie décimal perdu
@@ -72,7 +74,7 @@ class PrivateClass {
 
 - equals => méthode de la classe String
 
-- == ne permet pas de vérifier si deux valeurs sont égaux, mais plutôt vérifie s'ils pointent vers la même adresse en mémoire. Vérifie si deux objets ne font qu’un (la même adresse en mémoire), et non s’ils ont le même contenu.
+- == ne permet pas de vérifier si les valeurs de deux objets sont égaux, mais plutôt vérifie s'ils pointent vers la même adresse en mémoire. Vérifie si deux objets ne font qu’un (la même adresse en mémoire), et non s’ils ont le même contenu.
 
 - if(conditions 0){}...else if(conditions 1){}...else{}
 
