@@ -11,6 +11,7 @@ public class Tableaux {
 
         System.out.println ("donnez " + N + " valeurs flottantes") ;
         for (i=0 ; i<N ; i++) val[i] = input.nextDouble();
+        input.close();
 
         double valMax = val[0], valMin = val[0], somme=0 ;
 
